@@ -11,6 +11,7 @@ export class CalculatorComponent {
   operators:string[]=['*','/','+','-'];
 
 addToInput=(value:string)=>{
+
   this.input=this.input + value;
 }
 
@@ -25,7 +26,8 @@ clearInput=()=>{
 
 findResult=()=>{
   try {
-    this.input=eval(this.input) ;
+    let finalInputString=this.input.replace(/\b0+(\d)/g, '$1');
+    this.input=eval(finalInputString) ;
   } catch (error) {
     console.log(error);
   }
