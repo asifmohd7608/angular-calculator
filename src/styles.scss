@@ -1,1 +1,84 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  font-family: "Noto Sans", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  //   background-image: url();
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 10rem auto;
+  padding: 2rem;
+  text-align: center;
+  max-width: fit-content;
+  max-height: fit-content;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+
+  // ------------------------
+  background: rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9.5px);
+  -webkit-backdrop-filter: blur(9.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  //   rgba(85, 81, 81, 0.616)
+  input {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+    height: 4rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.number_container {
+  display: grid;
+  grid-template-columns: repeat(3, 70px);
+  grid-auto-flow: row;
+}
+.operator_container {
+  display: grid;
+  grid-template-columns: repeat(1, 70px);
+}
+.key_container {
+  display: flex;
+}
+.number {
+  margin: 0.2rem;
+  padding: 0.5rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background-color: aliceblue;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.operator {
+  @extend .number;
+  background-color: rgb(165, 165, 33);
+}
+.action_btns {
+  @extend .number;
+  color: white;
+}
+.delete_btn {
+  background-color: rgb(122, 50, 24);
+}
+.clear_btn {
+  background-color: rgb(13, 129, 236);
+}
+.equal_btn {
+  width: 95%;
+  margin-top: 0.5rem;
+  padding: 0.2rem;
+  border-radius: 0.5rem;
+  border: none;
+  color: white;
+  background-color: rgb(6, 82, 6);
+}

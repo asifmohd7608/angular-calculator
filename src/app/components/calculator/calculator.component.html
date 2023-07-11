@@ -1,0 +1,25 @@
+<div class="container">
+  <input type="text" [(ngModel)]="input" />
+  <div class="key_container">
+    <div class="number_container">
+      <app-numbers
+        *ngFor="let number of numbers"
+        [number]="number"
+        (numberEvent)="addToInput($event)"
+      ></app-numbers>
+      <div class="action_btns delete_btn" (click)="deleteLastEntry()">
+        delete
+      </div>
+      <div class="action_btns clear_btn" (click)="clearInput()">clear</div>
+    </div>
+    <div class="operator_container">
+      <app-operators
+        *ngFor="let operator of operators"
+        [operator]="operator"
+        (operatorEvent)="addToInput($event)"
+      ></app-operators>
+    </div>
+  </div>
+
+  <button (click)="findResult()" class="equal_btn">Result</button>
+</div>
